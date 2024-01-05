@@ -95,12 +95,12 @@ local mappings = {
     -- this is useful for naming menus
     ["<leader>b"] = { name = "Buffers" },
     -- Describing remapped values:
-    ["<C-b>"] = { desc = "Scroll up one (1) full page."}
-    ["<C-d>"] = { desc = "Scroll down one half (1/2) page."}
-    ["<C-u>"] = { desc = "Scroll up one half (1/2) page."}
-    ["<C-e>"] = { desc = "Virtually scroll up one (1) line."}
-    ["<C-y>"] = { desc = "Virtually scroll down one (1) line."}
-    ["<C-f>"] = { desc = "Scroll forward down one (1) full page."}
+    ["<C-b>"] = { desc = "Scroll up one (1) full page."},
+    ["<C-d>"] = { desc = "Scroll down one half (1/2) page."},
+    ["<C-u>"] = { desc = "Scroll up one half (1/2) page."},
+    ["<C-e>"] = { desc = "Virtually scroll up one (1) line."},
+    ["<C-y>"] = { desc = "Virtually scroll down one (1) line."},
+    ["<C-f>"] = { desc = "Scroll forward down one (1) full page."},
     -- quick save
     -- ["<C-s>"] = { ":w!<cr>", desc = "Save File" },  -- change description but the same command
   },
