@@ -22,9 +22,9 @@ return {
   {
     "folke/todo-comments.nvim",
     event = "User AstroFile",
-    cmd   = { "TodoTrouble", "TodoTelescope", "TodoLocList", "TodoQuickFix" },
-    opts  = {},
+    cmd = { "TodoTrouble", "TodoTelescope", "TodoLocList", "TodoQuickFix" },
+    opts = {},
   },
-  
   { "wakatime/vim-wakatime", event = "User AstroFile" },
+  { "joechrisellis/lsp-format-modifications.nvim" },
 }

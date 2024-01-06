@@ -87,8 +87,8 @@ local mappings = {
       desc = "Pick to close",
     },
     -- move buffer to the left and right.
-    ["<A-l>"] = { "zl", desc = "Scroll to the right"},
-    ["<A-h>"] = { "zh", desc = "Scroll to the left"},
+    ["<A-l>"] = { "zl",    desc = "Scroll to the right"},
+    ["<A-h>"] = { "zh",    desc = "Scroll to the left"},
     ["<A-k>"] = { "<C-y>", desc = "Scroll up without moving cursor"},
     ["<A-j>"] = { "<C-e>", desc = "Scroll down without moving cursor"},
     -- tables with the `name` key will be registered with which-key if it's installed
