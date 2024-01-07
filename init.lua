@@ -29,14 +29,21 @@ return {
   lsp = {
     -- customize lsp formatting options
     formatting = {
+      filter = function(client)
+        -- only enable null-ls for python files.
+        -- This honestly doesn't work right now lmao.
+        if vim.bo.filetype == "python" then return client.name == "null-ls" end
+
+        return true
+      end,
       -- control auto formatting on save
       format_on_save = {
-        enabled = true, -- enable or disable format on save globally
+        enabled = false, -- enable or disable format on save globally
         allow_filetypes = { -- enable format on save for specified filetypes only
           -- "go",
         },
         ignore_filetypes = { -- disable format on save for specified filetypes
-          "python",
+          -- "python",
         },
       },
       disabled = { -- disable formatting capabilities for the listed language servers
@@ -65,30 +72,11 @@ return {
     },
   },
 
+  plugins = {},
   -- This function is run last and is a good place to configuring
   -- augroups/autocommands and custom filetypes also this just pure lua so
   -- anything that doesn't fit in the normal config locations above can go here
   polish = function()
-    -- local autocmds = require "user.autocommands"
-    -- If this works I'm actually a fucking god. I have literally no clue how any of this works.
-    -- vim.api.nvim_create_autocmd("BufWritePost", {
-    --   desc = "For usage with python files and contributing to projects. Runs the darker command to have formatting only on changed lines.",
-    --   group = vim.api.nvim_create_augroup("format_on_changes", { clear = true }),
-    --   command = 'silent exe "!darker %"',
-    -- })
-    vim.api.nvim_command("set autoread")
-    vim.api.nvim_create_augroup("PythonAutoDarker", { clear = true })
-    vim.api.nvim_create_autocmd("BufWritePost", {
-      pattern = "*.py",
-      group = "PythonAutoDarker",
-      callback = function()
-        vim.fn.jobstart({ "darker", vim.fn.expand("%") }, {
-          on_exit = function(_, data, _)
-            vim.cmd(":e!")
-          end,
-        })
-      end,
-    })
 
     -- Set up custom filetypes
     -- vim.filetype.add {

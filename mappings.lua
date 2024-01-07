@@ -103,6 +103,7 @@ local mappings = {
     ["<C-f>"] = { desc = "Scroll forward down one (1) full page."},
     -- quick save
     -- ["<C-s>"] = { ":w!<cr>", desc = "Save File" },  -- change description but the same command
+    ["<leader>lF"] = { "<cmd>FormatModifications<cr>", desc = "Format modified lines"}
   },
   i = {
     -- signature help, fails silently so attach always

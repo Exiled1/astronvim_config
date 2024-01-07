@@ -27,4 +27,9 @@ return {
       }
     end,
   },
+  {
+    "joechrisellis/lsp-format-modifications.nvim",
+    -- event = { "User AstroFile", "LspAttach", "User AstroGitFile" },
+    event = { "User AstroGitFile" }
+  },
 }
