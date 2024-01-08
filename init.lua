@@ -31,10 +31,12 @@ return {
     formatting = {
       filter = function(client)
         -- only enable null-ls for python files.
-        -- This honestly doesn't work right now lmao.
-        if vim.bo.filetype == "python" then return client.name == "null-ls" end
-
-        return true
+        -- Thank you Ray! Filter works now!
+        if vim.bo.filetype == "python" then
+          return client.name == "null-ls"
+        else
+          return client.name ~= "null-ls"
+        end
       end,
       -- control auto formatting on save
       format_on_save = {
